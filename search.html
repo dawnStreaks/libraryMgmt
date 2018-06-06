@@ -1,0 +1,31 @@
+<html>
+<body bgcolor="#E6E6FA">
+<h1>LIBRARY DATABASE</h1>
+<script language="JavaScript" type="text/JavaScript">
+var numb=/^[0-9-]+$/;
+function validateForm()
+ {
+  var x1=document.forms["input"]["bookno"].value;
+  if (x1==null || x1=="")
+  {
+   alert("Book No must be filled out");
+   return false;
+  }
+  if(isNaN(x1))
+  {
+   alert("Enter Numbers only for Book No:");
+   return false;
+  }
+} 
+</script>
+<form name="input" action="search.php" onsubmit="return validateForm()" method="post" >
+<table border="0" bgcolor=#B0C4DE>
+<tr>
+<td>Book No:</td><td><input type="text" name="bookno" /></td>
+</tr>
+<input type="submit" value="Search" />
+</form>
+<form name="input" action="list.html" method="post" >
+<input type="submit" value="Back" />
+</form>
+</body>
